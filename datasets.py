@@ -301,7 +301,7 @@ def list_files(dataset: str, period: str, tier: str) -> None:
     show_default=True,
 )
 @click.option(
-    "--type", default="NTuple", type=click.Choice(TYPES, case_sensitive=False)
+    "--tier", default="NTuple", type=click.Choice(TYPES, case_sensitive=False)
 )
 @click.option("--max-files", default=0, type=click.IntRange(0))
 def stage(dataset: str, period: str, tier: str, max_files: int | None) -> None:

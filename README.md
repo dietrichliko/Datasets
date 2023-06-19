@@ -29,7 +29,18 @@ information required for processing.
 
 ## Tools
 
-Simple tool to list datasets. It uses the information from my google doc to list and stage files. 
+Simple tool to list and stage datasets. It uses the information from my google doc to list and stage files. 
+You can find the "nice" name in the spreadsheet in the column Datasets. At this point only some datasets of the
+period "Run2016preVFP" have been entered. The others will follow.
 
-   dataset list
-   dataset stage
+List the content of the dataset MET_Run2016C_HIPM_UL in the Ntuple tier
+   
+    $ ./datasets.py list MET_Run2016C_HIPM_UL --tier=ntuple
+    root://eos.grid.vbc.ac.at//store/user/liko/StopsCompressed/nanoTuples/compstops_UL16APVv9_nano_v10/Met/MET_Run2016C_HIPM_UL/MET_Run2016C_HIPM_UL_0.root
+    root://eos.grid.vbc.ac.at//store/user/liko/StopsCompressed/nanoTuples/compstops_UL16APVv9_nano_v10/Met/MET_Run2016C_HIPM_UL/MET_Run2016C_HIPM_UL_1.root
+    .....
+
+Stage the first file of the dataset DYJetsToLL_M50_HT70to100 from the MiniAOD tier on the scratch area.
+
+    $ ./datasets.py stage DYJetsToLL_M50_HT70to100 --tier=MiniAOD --max-files=1
+    /scratch-cbe/users/dietrich.liko/cache/mc/RunIISummer20UL16MiniAODAPVv2/DYJetsToLL_M-50_HT-70to100_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_preVFP_v11-v2/2430000/B685E9BC-7B62-BB4A-8A53-D51CB6DB8133.root
